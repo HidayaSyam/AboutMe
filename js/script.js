@@ -149,31 +149,31 @@ while (!randomNumberValid && randomNumberAttempt < 4) {
 var belovedPlacesAttempt = 0;
 while (!belovedPlacesValid && belovedPlacesAttempt < 6) {
     belovedPlaces = prompt('Guess one of my beloved places').toLocaleLowerCase();
+
     for (var i = 0; i < myBelovedPlaces.length; i++) {
         if (myBelovedPlaces[i] == belovedPlaces) {
-            alert('You got it');
+            //alert('You got it');
             belovedPlacesValid = true;
             correctAnswersCount++;
             belovedPlacesAnswer = true;
-
-        }
-
-        // if
-        // else {
-        //     alert('Wrong answer');
-        // }
-    break;        
+        }    
+    //break;        
+    }
+    if(belovedPlacesAnswer){
+        alert('You got it');
+    }else{
+        alert('Wrong Answer');
     }
 
-    var wrongAnswersCounter=0;
-    for (var j = 0; j < myBelovedPlaces.length; j++) {
-        if (myBelovedPlaces[i] != belovedPlaces) {
-            wrongAnswersCounter++;
-           }
-           if(wrongAnswersCounter==6){
-            alert('Wrong Answer');
-           }
-    }
+    // var wrongAnswersCounter=0;
+    // for (var j = 0; j < myBelovedPlaces.length; j++) {
+    //     if (myBelovedPlaces[i] != belovedPlaces) {
+    //         wrongAnswersCounter++;
+    //        }
+    //        if(wrongAnswersCounter==6){
+    //         alert('Wrong Answer');
+    //        }
+    // }
 
     belovedPlacesAttempt++;
     if (belovedPlacesAttempt == 6) {
