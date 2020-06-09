@@ -6,6 +6,12 @@ var myAge = 33;
 var myGender = 'male';
 var myFavColor = 'red';
 var myEducationDegree = 'master';
+//var myRandomNumber = 150;
+var myRandomNumber = Math.floor(Math.random() * (200 - 100)) + 100;
+var myBelovedPlaces = ['vienna', 'gaza', 'cairo', 'amman','usa', 'uk'];
+
+console.log('myRandomNumber',myRandomNumber);
+
 
 
 
@@ -14,12 +20,18 @@ var age;
 var gender;
 var favColor;
 var educationDegree;
+var randomNumber;
+var belovedPlaces;
 
 var nameValid = false;
 var ageValid = false;
 var genderValid = false;
 var favColorValid = false;
 var educationDegreeValid = false;
+var randomNumberValid = false;
+var belovedPlacesValid = false;
+
+
 
 var correctAnswersCount = 0;
 
@@ -28,6 +40,8 @@ var ageAnswer = false;
 var genderAnswer = false;
 var favColorAnswer = false;
 var educationDegreeAnswer = false;
+var randomNumberAnswer = false;
+var belovedPlacesAnswer = false;
 
 
 while (!nameValid) {
@@ -103,6 +117,83 @@ if (educationDegree == 'yes' || educationDegree == 'y') {
     alert('Sory, You should remeber my Grade, I am a master degree');
 }
 
+var randomNumberAttempt = 0;
+while (!randomNumberValid && randomNumberAttempt < 4) {
+    randomNumber = prompt('Chose number Between 100 and 200','for example: '+myRandomNumber);
+    randomNumberAttempt++;
+    if (randomNumber > 200 || randomNumber < 100) {
+        alert('out of range');
+
+    } else {
+        if (myRandomNumber == randomNumber) {
+            randomNumberValid = true;
+            correctAnswersCount++;
+            randomNumberAnswer = true;
+
+
+        }
+        else if (randomNumber > myRandomNumber + 10) {
+            alert('you entered too high number');
+        } else if (randomNumber < myRandomNumber - 10) {
+            alert('you entered too low number');
+        }
+    }
+
+
+    if (randomNumberAttempt == 4) {
+        alert('You have exhausted four attempts, the right answer is: ' + myRandomNumber);
+    }
+}
+
+
+var belovedPlacesAttempt = 0;
+while (!belovedPlacesValid && belovedPlacesAttempt < 6) {
+    belovedPlaces = prompt('Guess one of my beloved places').toLocaleLowerCase();
+    for (var i = 0; i < myBelovedPlaces.length; i++) {
+        if (myBelovedPlaces[i] == belovedPlaces) {
+            alert('You got it');
+            belovedPlacesValid = true;
+            correctAnswersCount++;
+            belovedPlacesAnswer = true;
+
+        }
+
+        // if
+        // else {
+        //     alert('Wrong answer');
+        // }
+    break;        
+    }
+
+    var wrongAnswersCounter=0;
+    for (var j = 0; j < myBelovedPlaces.length; j++) {
+        if (myBelovedPlaces[i] != belovedPlaces) {
+            wrongAnswersCounter++;
+           }
+           if(wrongAnswersCounter==6){
+            alert('Wrong Answer');
+           }
+    }
+
+    belovedPlacesAttempt++;
+    if (belovedPlacesAttempt == 6) {
+        alert('You have exhausted six attempts, the right answer is: ' + myBelovedPlaces);
+    }
+
+}
+
+
+// if (educationDegree == 'yes' || educationDegree == 'y') {
+//     correctAnswersCount++;
+//     educationDegreeAnswer = true;
+// } else {
+//     alert('Sory, You should remeber my Grade, I am a master degree');
+// }
+
+
+
+
+
 document.getElementById('myName').innerHTML = 'My Name is: ' + myName;
 document.getElementById('myAge').innerHTML = 'My Age is: ' + myAge;
 document.getElementById('myGender').innerHTML = 'My Gender is: ' + myGender;
@@ -138,7 +229,7 @@ if (educationDegree == 'yes' || educationDegree == 'y') {
 // console.log('User answer for favourite color: ' + favColorAnswer);
 // console.log('User answer for gender: ' + educationDegreeAnswer);
 
-alert('Wellcome ' + userName + 'You answer ' + correctAnswersCount + ' correctly');
+alert('Wellcome ' + userName + ', You answer ' + correctAnswersCount + ' correctly out of 7');
 
 
 
