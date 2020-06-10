@@ -8,9 +8,9 @@ var myFavColor = 'red';
 var myEducationDegree = 'master';
 //var myRandomNumber = 150;
 var myRandomNumber = Math.floor(Math.random() * (200 - 100)) + 100;
-var myBelovedPlaces = ['vienna', 'gaza', 'cairo', 'amman','usa', 'uk'];
+var myBelovedPlaces = ['vienna', 'gaza', 'cairo', 'amman', 'usa', 'uk'];
 
-console.log('myRandomNumber',myRandomNumber);
+console.log('myRandomNumber', myRandomNumber);
 
 
 
@@ -43,146 +43,155 @@ var educationDegreeAnswer = false;
 var randomNumberAnswer = false;
 var belovedPlacesAnswer = false;
 
-
-while (!nameValid) {
-    name = prompt('My name is Ahmad Alhrthani', 'Yes, Y, No or N').toLocaleLowerCase();
-    if (name == 'yes' || name == 'y' || name == 'no' || name == 'n') {
-        nameValid = true;
+function Fivequesation() {
+    while (!nameValid) {
+        name = prompt('My name is Ahmad Alhrthani', 'Yes, Y, No or N').toLocaleLowerCase();
+        if (name == 'yes' || name == 'y' || name == 'no' || name == 'n') {
+            nameValid = true;
+        }
     }
-}
 
-if (name == 'yes' || name == 'y') {
-    correctAnswersCount++;
-    nameAnswer = true;
-} else {
-    alert('Sory, You should remeber my name, I am Ahmad Alhrthani');
-}
-
-while (!ageValid) {
-    age = prompt('My Age is 22', 'Yes, Y, No or N').toLocaleLowerCase();
-    if (age == 'yes' || age == 'y' || age == 'no' || age == 'n') {
-        ageValid = true;
+    if (name == 'yes' || name == 'y') {
+        correctAnswersCount++;
+        nameAnswer = true;
+    } else {
+        alert('Sory, You should remeber my name, I am Ahmad Alhrthani');
     }
-}
 
-if (age == 'no' || age == 'n') {
-    correctAnswersCount++;
-    ageAnswer = true;
-} else {
-    alert('Sory, You should remeber my age, I am 33');
-}
-
-while (!genderValid) {
-    gender = prompt('My Gender is Male', 'Yes, Y, No or N').toLocaleLowerCase();
-    if (gender == 'yes' || gender == 'y' || gender == 'no' || gender == 'n') {
-        genderValid = true;
+    while (!ageValid) {
+        age = prompt('My Age is 22', 'Yes, Y, No or N').toLocaleLowerCase();
+        if (age == 'yes' || age == 'y' || age == 'no' || age == 'n') {
+            ageValid = true;
+        }
     }
-}
 
-if (gender == 'yes' || gender == 'y') {
-    correctAnswersCount++;
-    genderAnswer = true;
-} else {
-    alert('Sory, You should remeber my gender, I am Male');
-}
-
-while (!favColorValid) {
-    favColor = prompt('My favourite color is Blue', 'Yes, Y, No or N').toLocaleLowerCase();
-    if (favColor == 'yes' || favColor == 'y' || favColor == 'no' || favColor == 'n') {
-        favColorValid = true;
+    if (age == 'no' || age == 'n') {
+        correctAnswersCount++;
+        ageAnswer = true;
+    } else {
+        alert('Sory, You should remeber my age, I am 33');
     }
-}
 
-if (favColor == 'no' || favColor == 'n') {
-    correctAnswersCount++;
-    favColorAnswer = true;
-} else {
-    alert('Sory, You should remeber my Fvourite color, It is Red');
-}
-
-
-
-while (!educationDegreeValid) {
-    educationDegree = prompt('My education grade is Master', 'Yes, Y, No or N').toLocaleLowerCase();
-    if (educationDegree == 'yes' || educationDegree == 'y' || educationDegree == 'no' || educationDegree == 'n') {
-        educationDegreeValid = true;
+    while (!genderValid) {
+        gender = prompt('My Gender is Male', 'Yes, Y, No or N').toLocaleLowerCase();
+        if (gender == 'yes' || gender == 'y' || gender == 'no' || gender == 'n') {
+            genderValid = true;
+        }
     }
-}
+
+    if (gender == 'yes' || gender == 'y') {
+        correctAnswersCount++;
+        genderAnswer = true;
+    } else {
+        alert('Sory, You should remeber my gender, I am Male');
+    }
+
+    while (!favColorValid) {
+        favColor = prompt('My favourite color is Blue', 'Yes, Y, No or N').toLocaleLowerCase();
+        if (favColor == 'yes' || favColor == 'y' || favColor == 'no' || favColor == 'n') {
+            favColorValid = true;
+        }
+    }
+
+    if (favColor == 'no' || favColor == 'n') {
+        correctAnswersCount++;
+        favColorAnswer = true;
+    } else {
+        alert('Sory, You should remeber my Fvourite color, It is Red');
+    }
 
 
-if (educationDegree == 'yes' || educationDegree == 'y') {
-    correctAnswersCount++;
-    educationDegreeAnswer = true;
-} else {
-    alert('Sory, You should remeber my Grade, I am a master degree');
+
+    while (!educationDegreeValid) {
+        educationDegree = prompt('My education grade is Master', 'Yes, Y, No or N').toLocaleLowerCase();
+        if (educationDegree == 'yes' || educationDegree == 'y' || educationDegree == 'no' || educationDegree == 'n') {
+            educationDegreeValid = true;
+        }
+    }
+
+
+    if (educationDegree == 'yes' || educationDegree == 'y') {
+        correctAnswersCount++;
+        educationDegreeAnswer = true;
+    } else {
+        alert('Sory, You should remeber my Grade, I am a master degree');
+    }
+
 }
+
+Fivequesation();
 
 var randomNumberAttempt = 0;
-while (!randomNumberValid && randomNumberAttempt < 4) {
-    randomNumber = prompt('Chose number Between 100 and 200','for example: '+myRandomNumber);
-    randomNumberAttempt++;
-    if (randomNumber > 200 || randomNumber < 100) {
-        alert('out of range');
+function GuessGame() {
+    while (!randomNumberValid && randomNumberAttempt < 4) {
+        randomNumber = prompt('Chose number Between 100 and 200', 'for example: ' + myRandomNumber);
+        randomNumberAttempt++;
+        if (randomNumber > 200 || randomNumber < 100) {
+            alert('out of range');
 
-    } else {
-        if (myRandomNumber == randomNumber) {
-            randomNumberValid = true;
-            correctAnswersCount++;
-            randomNumberAnswer = true;
+        } else {
+            if (myRandomNumber == randomNumber) {
+                randomNumberValid = true;
+                correctAnswersCount++;
+                randomNumberAnswer = true;
 
 
+            }
+            else if (randomNumber > myRandomNumber + 10) {
+                alert('you entered too high number');
+            } else if (randomNumber < myRandomNumber - 10) {
+                alert('you entered too low number');
+            }
         }
-        else if (randomNumber > myRandomNumber + 10) {
-            alert('you entered too high number');
-        } else if (randomNumber < myRandomNumber - 10) {
-            alert('you entered too low number');
+
+
+        if (randomNumberAttempt == 4) {
+            alert('You have exhausted four attempts, the right answer is: ' + myRandomNumber);
         }
     }
 
-
-    if (randomNumberAttempt == 4) {
-        alert('You have exhausted four attempts, the right answer is: ' + myRandomNumber);
-    }
 }
-
-
+GuessGame();
 var belovedPlacesAttempt = 0;
-while (!belovedPlacesValid && belovedPlacesAttempt < 6) {
-    belovedPlaces = prompt('Guess one of my beloved places').toLocaleLowerCase();
 
-    for (var i = 0; i < myBelovedPlaces.length; i++) {
-        if (myBelovedPlaces[i] == belovedPlaces) {
-            //alert('You got it');
-            belovedPlacesValid = true;
-            correctAnswersCount++;
-            belovedPlacesAnswer = true;
-        }    
-    //break;        
+function GuessGametwo(){
+    
+    while (!belovedPlacesValid && belovedPlacesAttempt < 6) {
+        belovedPlaces = prompt('Guess one of my beloved places').toLocaleLowerCase();
+
+        for (var i = 0; i < myBelovedPlaces.length; i++) {
+            if (myBelovedPlaces[i] == belovedPlaces) {
+                //alert('You got it');
+                belovedPlacesValid = true;
+                correctAnswersCount++;
+                belovedPlacesAnswer = true;
+            }
+            //break;        
+        }
+        if (belovedPlacesAnswer) {
+            alert('You got it');
+        } else {
+            alert('Wrong Answer');
+        }
+
+        // var wrongAnswersCounter=0;
+        // for (var j = 0; j < myBelovedPlaces.length; j++) {
+        //     if (myBelovedPlaces[i] != belovedPlaces) {
+        //         wrongAnswersCounter++;
+        //        }
+        //        if(wrongAnswersCounter==6){
+        //         alert('Wrong Answer');
+        //        }
+        // }
+
+        belovedPlacesAttempt++;
+        if (belovedPlacesAttempt == 6) {
+            alert('You have exhausted six attempts, the right answer is: ' + myBelovedPlaces);
+        }
+
     }
-    if(belovedPlacesAnswer){
-        alert('You got it');
-    }else{
-        alert('Wrong Answer');
-    }
-
-    // var wrongAnswersCounter=0;
-    // for (var j = 0; j < myBelovedPlaces.length; j++) {
-    //     if (myBelovedPlaces[i] != belovedPlaces) {
-    //         wrongAnswersCounter++;
-    //        }
-    //        if(wrongAnswersCounter==6){
-    //         alert('Wrong Answer');
-    //        }
-    // }
-
-    belovedPlacesAttempt++;
-    if (belovedPlacesAttempt == 6) {
-        alert('You have exhausted six attempts, the right answer is: ' + myBelovedPlaces);
-    }
-
 }
-
-
+GuessGametwo();
 // if (educationDegree == 'yes' || educationDegree == 'y') {
 //     correctAnswersCount++;
 //     educationDegreeAnswer = true;
