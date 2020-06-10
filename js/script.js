@@ -23,7 +23,7 @@ var educationDegree;
 var randomNumber;
 var belovedPlaces;
 
-var nameValid = false;
+
 var ageValid = false;
 var genderValid = false;
 var favColorValid = false;
@@ -43,9 +43,11 @@ var educationDegreeAnswer = false;
 var randomNumberAnswer = false;
 var belovedPlacesAnswer = false;
 
-function Fivequesation() {
+function Fivequesation(que,rightanswer,wronganswer)
+ {
+    var nameValid = false;
     while (!nameValid) {
-        name = prompt('My name is Ahmad Alhrthani', 'Yes, Y, No or N').toLocaleLowerCase();
+        name = prompt(que,'Yes , y , No, n ').toLocaleLowerCase();
         if (name == 'yes' || name == 'y' || name == 'no' || name == 'n') {
             nameValid = true;
         }
@@ -53,73 +55,23 @@ function Fivequesation() {
 
     if (name == 'yes' || name == 'y') {
         correctAnswersCount++;
+        alert(rightanswer);
         nameAnswer = true;
     } else {
-        alert('Sory, You should remeber my name, I am Ahmad Alhrthani');
-    }
-
-    while (!ageValid) {
-        age = prompt('My Age is 22', 'Yes, Y, No or N').toLocaleLowerCase();
-        if (age == 'yes' || age == 'y' || age == 'no' || age == 'n') {
-            ageValid = true;
-        }
-    }
-
-    if (age == 'no' || age == 'n') {
-        correctAnswersCount++;
-        ageAnswer = true;
-    } else {
-        alert('Sory, You should remeber my age, I am 33');
-    }
-
-    while (!genderValid) {
-        gender = prompt('My Gender is Male', 'Yes, Y, No or N').toLocaleLowerCase();
-        if (gender == 'yes' || gender == 'y' || gender == 'no' || gender == 'n') {
-            genderValid = true;
-        }
-    }
-
-    if (gender == 'yes' || gender == 'y') {
-        correctAnswersCount++;
-        genderAnswer = true;
-    } else {
-        alert('Sory, You should remeber my gender, I am Male');
-    }
-
-    while (!favColorValid) {
-        favColor = prompt('My favourite color is Blue', 'Yes, Y, No or N').toLocaleLowerCase();
-        if (favColor == 'yes' || favColor == 'y' || favColor == 'no' || favColor == 'n') {
-            favColorValid = true;
-        }
-    }
-
-    if (favColor == 'no' || favColor == 'n') {
-        correctAnswersCount++;
-        favColorAnswer = true;
-    } else {
-        alert('Sory, You should remeber my Fvourite color, It is Red');
+        alert(wronganswer);
     }
 
 
 
-    while (!educationDegreeValid) {
-        educationDegree = prompt('My education grade is Master', 'Yes, Y, No or N').toLocaleLowerCase();
-        if (educationDegree == 'yes' || educationDegree == 'y' || educationDegree == 'no' || educationDegree == 'n') {
-            educationDegreeValid = true;
-        }
-    }
-
-
-    if (educationDegree == 'yes' || educationDegree == 'y') {
-        correctAnswersCount++;
-        educationDegreeAnswer = true;
-    } else {
-        alert('Sory, You should remeber my Grade, I am a master degree');
-    }
 
 }
 
-Fivequesation();
+Fivequesation('My name is Ahmad Alhrthani', 'Yes, My Name Ahmad Alhrthani','Sorry, You should remeber my name, I am Ahmad Alhrthani');
+Fivequesation('My Age is 22', 'Yes, Y, No or N', 'No , My Age 33','Yes, My age 33');
+Fivequesation('My favourite color is Blue', 'No, My favourite color is Red','Yes,Correct My favourite color is Red');
+Fivequesation('My Gender is Male', 'Yes, Y, No or N', 'Yes, Male','No, My Gender is Male');
+Fivequesation('My education grade is Master', 'Yes,I have Master Dgree','No,that\'s wrong I have Master dgree');
+
 
 var randomNumberAttempt = 0;
 function GuessGame() {
