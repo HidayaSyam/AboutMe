@@ -1,0 +1,36 @@
+body{
+background-color: lightblue;
+}
+header{
+    background-color: azure;
+
+}
+
+header h1{
+    color: black;
+}
+#mainParagraph{
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+font-size: 32;
+    
+}
+#title {
+    color: darkgoldenrod;
+}
+
+#correctAnswers {
+    color: green;
+}
+
+h2 {
+    color: red;
+}
+#topTenList{
+    display: inline;
+}
+
+#mainParagraph{
+    display: inline;
+
+
+}
